@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyIdentifier>AH.UnitSystem.Predefined</AssemblyIdentifier>
+    <CheckOutDir>..</CheckOutDir>
+    <OutputPath>$(CheckOutDir)\bin\$(Configuration)</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.1;net5.0</TargetFrameworks>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblyName>$(AssemblyIdentifier)</AssemblyName>
+    <RootNamespace>$(AssemblyIdentifier)</RootNamespace>
+    <SignAssembly>true</SignAssembly>
+    <Version>1.0.0-pre.0</Version>
+    <AssemblyOriginatorKeyFile>$(CheckOutDir)\AH.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="$(CheckOutDir)\CommonAssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UnitSystem.Predefined.Interface\UnitSystem.Predefined.Interface.csproj" />
+  </ItemGroup>
+</Project>

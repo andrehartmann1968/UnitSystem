@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyIdentifier>AH.UnitSystem</AssemblyIdentifier>
+    <CheckOutDir>..</CheckOutDir>
+    <OutputPath>$(CheckOutDir)\bin\$(Configuration)</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.1;net5.0</TargetFrameworks>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblyName>$(AssemblyIdentifier)</AssemblyName>
+    <RootNamespace>$(AssemblyIdentifier)</RootNamespace>
+    <SignAssembly>true</SignAssembly>
+    <Version>1.0.0-pre.0</Version>
+    <AssemblyOriginatorKeyFile>$(CheckOutDir)\AH.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(CheckOutDir)\UnitSystem.Interface\UnitSystem.Interface.csproj" />
+    <ProjectReference Include="..\UnitSystem.SI.Interface\UnitSystem.SI.Interface.csproj" />
+  </ItemGroup>
+
+</Project>
