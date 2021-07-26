@@ -17,9 +17,9 @@ namespace AH.UnitSystem
             Group = pGroup;
         }
 
-        public virtual IPhysicalUnit SIUnit
+        public virtual IPhysicalUnit DefaultUnit
         {
-            get => Group.SIUnit;
+            get => Group.DefaultUnit;
             internal set { }
         }
 
@@ -52,7 +52,7 @@ namespace AH.UnitSystem
         /// </summary>
         public IPhysicalQuantityGroup Group { get; protected set; }
 
-        public string Display => $"{Name} [{SIUnit.Display}]";
+        public string Display => $"{Name} [{DefaultUnit.Display}]";
 
         /// <summary>
         /// This collection contains the units that are explicitly registered with this
@@ -65,7 +65,7 @@ namespace AH.UnitSystem
 
         /// <inheritdoc cref="IPhysicalQuantity.AvailableUnits"/>
         public IEnumerable<IPhysicalUnit> AvailableUnits
-            => (SIUnit != null ? new[] { SIUnit } : new IPhysicalUnit[0])
+            => (DefaultUnit != null ? new[] { DefaultUnit } : new IPhysicalUnit[0])
                    .Union(m_explicitlyRegisteredPhysicalUnits)
                    .Distinct();
     }

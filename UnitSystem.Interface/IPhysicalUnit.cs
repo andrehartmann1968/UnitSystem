@@ -1,4 +1,6 @@
-﻿namespace AH.UnitSystem.Interface
+﻿using AH.UnitSystem.Interface.UnitConverters;
+
+namespace AH.UnitSystem.Interface
 {
     /// <summary>
     /// This interface describes a physical unit such as Ångström or gallon.
@@ -23,12 +25,15 @@
         string Symbol { get; }
 
         /// <summary>
-        /// The underlying SI unit. It may come from a quantity that was
+        /// The underlying default unit.
+        /// 
+        /// In an SI-based unit system it will be the SI unit applicable.
+        /// It may come from a quantity that was
         /// available at the time when this instance was created or it may
         /// be assigned directly for units without quantities or it may be
         /// null, in which case this unit is treated like an SI unit.
         /// </summary>
-        IPhysicalUnit SIUnit { get; }
+        IPhysicalUnit DefaultUnit { get; }
 
         /// <summary>
         /// The converter that can be used to convert values between this

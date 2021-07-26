@@ -21,9 +21,11 @@ namespace AH.UnitSystem.Interface
         string Name { get; }
 
         /// <summary>
-        /// The underlying SI unit of this quantity; inherited from the PQG.
+        /// The underlying default unit of this quantity.
+        /// 
+        /// Usually in an SI-based unit system this will be the SI unit.
         /// </summary>
-        IPhysicalUnit SIUnit { get; }
+        IPhysicalUnit DefaultUnit { get; }
 
         /// <summary>
         /// The PQG that this PQ belongs to. In case the instance represents

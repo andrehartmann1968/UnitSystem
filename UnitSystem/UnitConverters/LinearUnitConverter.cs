@@ -1,4 +1,5 @@
 ﻿using AH.UnitSystem.Interface;
+using AH.UnitSystem.Interface.UnitConverters;
 
 namespace AH.UnitSystem.UnitConverters
 {
@@ -9,7 +10,7 @@ namespace AH.UnitSystem.UnitConverters
     /// 
     /// Example: °C = K / 1.0 - 273.15
     /// </summary>
-    class LinearUnitConverter : IUnitConverter
+    class LinearUnitConverter : ILinearUnitConverter
     {
         /// <summary>
         /// </summary>
@@ -25,10 +26,10 @@ namespace AH.UnitSystem.UnitConverters
         double m_scalingFactor;
         double m_Offset;
 
-        public double ConvertToSI(
+        public double ConvertToDefault(
             double pValue
         ) => m_Offset + pValue * m_scalingFactor;
-        public double ConvertFromSI(
+        public double ConvertFromDefault(
             double pValue
         ) => pValue / m_scalingFactor - m_Offset;
     }

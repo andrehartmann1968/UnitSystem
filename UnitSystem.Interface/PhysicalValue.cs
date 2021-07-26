@@ -60,15 +60,4 @@ namespace AH.UnitSystem.Interface
             }
         }
     }
-
-    public static class PhysicalValueHelper
-    {
-        public static double ConvertToSI(this PhysicalValue pValue)
-            => pValue.Unit.Converter.ConvertToSI(pValue.Value);
-        public static PhysicalValue ConvertToSIValue(this PhysicalValue pValue)
-            => new PhysicalValue(
-                pValue.Unit.Converter.ConvertToSI(pValue.Value),
-                pValue.Unit.SIUnit
-               );
-    }
 }

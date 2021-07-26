@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using AH.UnitSystem.Interface;
+using AH.UnitSystem.Interface.UnitConverters;
 
 namespace AH.UnitSystem
 {
@@ -10,13 +11,13 @@ namespace AH.UnitSystem
             string pName,
             string pSymbol,
             IUnitConverter pConverter,
-            IPhysicalUnit pSIUnit
+            IPhysicalUnit pDefaultUnit
         )
         {
             Name = pName;
             Symbol = pSymbol;
             Converter = pConverter;
-            SIUnit = pSIUnit;
+            DefaultUnit = pDefaultUnit;
         }
 
         internal PhysicalUnit(
@@ -28,7 +29,7 @@ namespace AH.UnitSystem
             pName,
             pSymbol, 
             new UnitConverters.ScalingUnitConverter(pScalingFactor),
-            pQuantity?.SIUnit
+            pQuantity?.DefaultUnit
         ) {
         }
 
@@ -42,7 +43,7 @@ namespace AH.UnitSystem
             pName,
             pSymbol,
             new UnitConverters.LinearUnitConverter(pOffset, pScalingFactor),
-            pQuantity?.SIUnit
+            pQuantity?.DefaultUnit
         )
         {
         }
@@ -58,8 +59,8 @@ namespace AH.UnitSystem
         /// <inheritdoc cref="IPhysicalUnit.Converter"/>
         public IUnitConverter Converter { get; }
 
-        /// <inheritdoc cref="IPhysicalUnit.SIUnit"/>
-        public IPhysicalUnit SIUnit { get; }
+        /// <inheritdoc cref="IPhysicalUnit.DefaultUnit"/>
+        public IPhysicalUnit DefaultUnit { get; }
 
         /// <inheritdoc cref="IPhysicalUnit.Display"/>
         public string Display => $"{Symbol}";

@@ -1,4 +1,4 @@
-﻿namespace UnitSystem.SI
+﻿namespace AH.UnitSystem.SI
 {
     /// <summary>
     /// This class defines the description of a dimension of the SI.

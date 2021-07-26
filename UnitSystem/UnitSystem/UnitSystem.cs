@@ -8,6 +8,9 @@ namespace AH.UnitSystem.UnitSystem
 {
     partial class UnitSystem : IUnitSystem
     {
+        /// <summary>
+        /// Creates a new instance with the given SI. SI may be null.
+        /// </summary>
         public UnitSystem(
             ISystèmeInternational pSystèmeInternational
         )
@@ -51,13 +54,13 @@ namespace AH.UnitSystem.UnitSystem
                 pName, pDimension, pQuantitySymbol, pDimensionSymbol
             )
             {
-                SIUnit = GenerateUnit(pDimension)
+                DefaultUnit = GenerateUnit(pDimension)
             };
             Register(physicalQuantityGroup);
             return physicalQuantityGroup;
         }
 
-        internal PhysicalUnit GenerateUnit(
+        PhysicalUnit GenerateUnit(
     Dimension pDimension
 )
         {
@@ -71,19 +74,19 @@ namespace AH.UnitSystem.UnitSystem
             {
                 if (pExponent > 1)
                 {
-                    numerators.Add($"{pGroup.SIUnit.Symbol}^{pExponent}");
+                    numerators.Add($"{pGroup.DefaultUnit.Symbol}^{pExponent}");
                 }
                 else if (pExponent > 0)
                 {
-                    numerators.Add(pGroup.SIUnit.Symbol);
+                    numerators.Add(pGroup.DefaultUnit.Symbol);
                 }
                 else if (pExponent < -1)
                 {
-                    denominators.Add($"{pGroup.SIUnit.Symbol}^{-pExponent}");
+                    denominators.Add($"{pGroup.DefaultUnit.Symbol}^{-pExponent}");
                 }
                 else if (pExponent < 0)
                 {
-                    denominators.Add(pGroup.SIUnit.Symbol);
+                    denominators.Add(pGroup.DefaultUnit.Symbol);
                 }
             }
 
@@ -155,7 +158,7 @@ namespace AH.UnitSystem.UnitSystem
             var physicalUnit = new PhysicalUnit(
                 pName, pSymbol,
                 null,
-                pQuantity?.SIUnit
+                pQuantity?.DefaultUnit
             );
             Register(pQuantity, physicalUnit);
             return physicalUnit;

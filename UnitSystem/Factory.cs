@@ -13,6 +13,13 @@ namespace AH.UnitSystem
         /// This method creates and returns a new instance of
         /// <see cref="IUnitSystem"/>.
         /// </summary>
+        public static IUnitSystem NewUnitSystem()
+            => new UnitSystem.UnitSystem(null);
+
+        /// <summary>
+        /// This method creates and returns a new instance of
+        /// <see cref="IUnitSystem"/>.
+        /// </summary>
         public static IUnitSystem NewUnitSystem(
             ISystèmeInternational pSystèmeInternational
         ) => new UnitSystem.UnitSystem(pSystèmeInternational);

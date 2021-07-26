@@ -1,4 +1,4 @@
-﻿using AH.UnitSystem.Interface;
+﻿using AH.UnitSystem.Interface.UnitConverters;
 
 namespace AH.UnitSystem.UnitConverters
 {
@@ -9,7 +9,7 @@ namespace AH.UnitSystem.UnitConverters
     /// 
     /// Example: min = sec / 60.0
     /// </summary>
-    class ScalingUnitConverter : IUnitConverter
+    class ScalingUnitConverter : IScalingUnitConverter
     {
         /// <summary>
         /// 
@@ -27,10 +27,10 @@ namespace AH.UnitSystem.UnitConverters
 
         double m_scalingFactor;
 
-        public double ConvertToSI(
+        public double ConvertToDefault(
             double pValue
         ) => pValue * m_scalingFactor;
-        public double ConvertFromSI(
+        public double ConvertFromDefault(
             double pValue
         ) => pValue / m_scalingFactor;
 

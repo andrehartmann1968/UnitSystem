@@ -36,4 +36,14 @@
         ///// </summary>
         //new string Name { get; }
     }
+
+    public interface IPhysicalQuantityGroupRW : IPhysicalQuantityGroup
+    {
+        /// <summary>
+        /// The underlying default unit of this quantity.
+        /// 
+        /// Usually in an SI-based unit system this will be the SI unit.
+        /// </summary>
+        new IPhysicalUnit DefaultUnit { get; set; }
+    }
 }

@@ -6,7 +6,7 @@ using AH.UnitSystem.SI.Interface;
 
 namespace AH.UnitSystem
 {
-    [DebuggerDisplay("{" + nameof(Name) + "} [{" + nameof(SIUnit) + "}]")]
+    [DebuggerDisplay("{" + nameof(Name) + "} [{" + nameof(DefaultUnit) + "}]")]
     class PhysicalQuantityGroup : PhysicalQuantity, IPhysicalQuantityGroup
     {
         internal PhysicalQuantityGroup(
@@ -25,6 +25,6 @@ namespace AH.UnitSystem
         public Dimension Dimension { get; }
         public string QuantitySymbol { get; }
         public string DimensionSymbol { get; }
-        public override IPhysicalUnit SIUnit { get; internal set; }
+        public override IPhysicalUnit DefaultUnit { get; internal set; }
     }
 }

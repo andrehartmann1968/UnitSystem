@@ -1,11 +1,11 @@
-﻿namespace AH.UnitSystem.Interface
+﻿namespace AH.UnitSystem.Interface.UnitConverters
 {
     public interface IUnitConverter
     {
-        double ConvertToSI(
+        double ConvertToDefault(
             double pValue
         );
-        double ConvertFromSI(
+        double ConvertFromDefault(
             double pValue
         );
     }
