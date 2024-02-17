@@ -14,6 +14,7 @@
     <SignAssembly>true</SignAssembly>
     <Version>1.0.0-pre.0</Version>
     <AssemblyOriginatorKeyFile>$(CheckOutDir)\AH.snk</AssemblyOriginatorKeyFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
