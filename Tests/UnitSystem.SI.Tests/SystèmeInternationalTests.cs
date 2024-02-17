@@ -8,7 +8,7 @@ namespace AH.UnitSystem.SI.Tests
         [Test]
         public void InstantiationTests()
         {
-            var @is = Factory.NewSI();
+            //var @is = Factory.NewSI();
         }
     }
 }

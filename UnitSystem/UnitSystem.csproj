@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFrameworks>net6.0</TargetFrameworks>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	  <TargetFrameworks>net8.0</TargetFrameworks>
+	  <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AssemblyName>$(AssemblyIdentifier)</AssemblyName>
     <RootNamespace>$(AssemblyIdentifier)</RootNamespace>
     <SignAssembly>true</SignAssembly>
