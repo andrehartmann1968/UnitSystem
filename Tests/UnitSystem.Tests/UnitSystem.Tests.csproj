@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	  <TargetFrameworks>net6.0</TargetFrameworks>
+	  <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <AssemblyName>$(AssemblyIdentifier)</AssemblyName>
     <RootNamespace>$(AssemblyIdentifier)</RootNamespace>
     <SignAssembly>true</SignAssembly>
